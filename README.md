@@ -1,6 +1,7 @@
 # Media Speed Bookmarklet
 Simple bookmarklet to control html video and audio speed.
 
+![media control popup](control.png)
 ## Motivation
 
 I've gotten used to watching the majority of youtube videos at 2x speed. Sometimes 2x isnt enough and I need more. Sometimes I write code.
