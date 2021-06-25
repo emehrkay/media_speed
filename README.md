@@ -6,6 +6,10 @@ Simple bookmarklet to control html video and audio speed.
 
 I've gotten used to watching the majority of youtube videos at 2x speed. Sometimes 2x isnt enough and I need more. Sometimes I write code.
 
+### Features
+* Ability to set the playback speed for every audio or video element on the page
+* Ability to skip to the end of a piece of media. This skips ads too
+* Ability to go back to the beginning
 ## Installation
 
 1. Go to this page https://caiorss.github.io/bookmarklet-maker/
