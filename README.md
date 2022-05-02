@@ -29,6 +29,9 @@ I've gotten used to watching the majority of youtube videos at 2x speed. Sometim
 
 I wrote this in longform js so that it is easy to understand and modify. Have fun submitting any improvements. Someone make it bounce in or something cool.
 
+## Shout Outs
+
+* [Nature Clip](https://www.videvo.net/video/macro-seedling-time-lapse-cc-by-natureclip/2150/) for their demo videos used in test/test.html
 ## License
 
 MIT

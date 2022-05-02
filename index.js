@@ -1,11 +1,28 @@
-
 var qs = document.querySelector.bind(document),
     qsa = document.querySelectorAll.bind(document);
-    existing = qsa('.video_speed_cover, .video_speed_container');
+existing = qsa('.video_speed_cover, .video_speed_container');
 
 if(existing.length){
     existing.forEach(el => el.remove());
 }
+
+var isPlaying = function(media){
+    return (!media.paused && !media.ended && media.readyState > 2);
+}
+
+var update = function(speed){
+    if(!active){
+        return;
+    }
+
+    active.playbackRate = speed;
+    rate.innerHTML = speed;
+};
+
+var setVideo = function(v){
+    active = v;
+    update(v.playbackRate);
+};
 
 var ce = document.createElement.bind(document),
     media = qsa('video,audio'),
@@ -13,6 +30,7 @@ var ce = document.createElement.bind(document),
     body = qs('body'),
     container = ce('div'),
     select = ce('select'),
+    options = [],
     range = ce('input'),
     rate = ce('span'),
     cover = ce('div'),
@@ -33,6 +51,8 @@ for(var i = 0; i < media.length; i++){
     o.value = i;
     var l = media[i].nodeName == 'VIDEO' ? 'video' : 'audio'
     o.text = `${l}: ${i + 1}`;
+
+    options.push(o);
     select.appendChild(o)
 }
 
@@ -41,20 +61,6 @@ select.onchange = function(){
     if(v){
         setVideo(media[v]);
     }
-};
-
-var update = function(speed){
-    if(!active){
-        return;
-    }
-
-    active.playbackRate = speed;
-    rate.innerHTML = speed;
-};
-
-var setVideo = function(v){
-    active = v;
-    update(v.playbackRate);
 };
 
 range.oninput = function(){
@@ -158,3 +164,10 @@ container.appendChild(buttons);
 container.appendChild(rate);
 body.appendChild(cover);
 body.appendChild(container);
+
+for(var i = 0; i < media.length; i++){
+    if(isPlaying(media[i])){
+        setVideo(media[i]);
+        select.querySelectorAll('option')[i + 1].selected = 'selected'
+    }
+}
