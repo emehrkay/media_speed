@@ -16,7 +16,7 @@ var update = function(speed){
     }
 
     active.playbackRate = speed;
-    rate.innerHTML = speed;
+    rate.textContent = speed;
 };
 
 var setVideo = function(v){
@@ -124,17 +124,17 @@ buttons.appendChild(b_three);
 buttons.appendChild(b_end);
 buttons.style.display = 'flex';
 buttons.style.justifyContent = 'space-between';
-b_half.innerHTML = '&frac12;x';
+b_half.textContent = '½x';
 b_half.href = '#';
-b_one.innerHTML = '1x';
+b_one.textContent = '1x';
 b_one.href = '#';
-b_two.innerHTML = '2x';
+b_two.textContent = '2x';
 b_two.href = '#';
-b_three.innerHTML = '3x';
+b_three.textContent = '3x';
 b_three.href = '#';
-b_beg.innerHTML = '<<';
+b_beg.textContent = '<<';
 b_beg.href = '#';
-b_end.innerHTML = '>>';
+b_end.textContent = '>>';
 b_end.href = '#';
 range.type = 'range';
 range.min = '.25';
